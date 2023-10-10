@@ -36,8 +36,10 @@ class LocalBlogBloc extends Bloc<LocalBlogsEvent, LocalBlogsState> {
   }
 
   void onSaveBlog(SaveBlog event, Emitter<LocalBlogsState> emit) async {
-    await _saveBlogUsecase();
-    final blogs = await _getSavedBlogsUsecase(params: event.blog);
+    await _saveBlogUsecase(params: event.blog);
+
+    final blogs = await _getSavedBlogsUsecase();
+
     emit(LocalBlogsDone(blogs));
   }
 }

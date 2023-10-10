@@ -31,8 +31,7 @@ class SavedBlogs extends HookWidget {
           child: const Icon(Ionicons.chevron_back, color: Colors.black),
         ),
       ),
-      title:
-          const Text('Saved Articles', style: TextStyle(color: Colors.black)),
+      title: const Text('Saved Blogs', style: TextStyle(color: Colors.black)),
     );
   }
 
@@ -49,20 +48,20 @@ class SavedBlogs extends HookWidget {
     );
   }
 
-  Widget _buildArticlesList(List<BlogEntity> articles) {
-    if (articles.isEmpty) {
+  Widget _buildArticlesList(List<BlogEntity> blogs) {
+    if (blogs.isEmpty) {
       return const Center(
           child: Text(
-        'NO SAVED ARTICLES',
+        'NO SAVED BLOGS!',
         style: TextStyle(color: Colors.black),
       ));
     }
 
     return ListView.builder(
-      itemCount: articles.length,
+      itemCount: blogs.length,
       itemBuilder: (context, index) {
         return BlogWidget(
-          blog: articles[index],
+          blog: blogs[index],
           isRemovable: true,
           onRemove: (article) => _onRemoveArticle(context, article),
           onBlogPressed: (article) => _onArticlePressed(context, article),

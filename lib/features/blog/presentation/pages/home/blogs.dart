@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:subspace/features/blog/domain/entitties/blog.dart';
 import 'package:subspace/features/blog/presentation/bloc/blog/remote/bloc/remote_blog_bloc.dart';
 import 'package:subspace/features/blog/presentation/widgets/blog_tile.dart';
 
@@ -30,6 +31,7 @@ class BlogsPage extends StatelessWidget {
           itemBuilder: ((context, index) {
             return BlogWidget(
               blog: state.blogs![index],
+              onBlogPressed: (blog) => _onBlogPressed(context, blog),
             );
           }),
           itemCount: 10,
@@ -52,6 +54,10 @@ class BlogsPage extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  void _onBlogPressed(BuildContext context, BlogEntity blog) {
+    Navigator.pushNamed(context, '/BlogDetails', arguments: blog);
   }
 
   void _onShowSavedArticlesViewTapped(BuildContext context) {
