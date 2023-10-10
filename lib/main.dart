@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
         theme: theme(),
         onGenerateRoute: AppRoutes.onGenerateRoutes,
         home: const BlogsPage(),
+        debugShowCheckedModeBanner: false,
       ),
     );
   }

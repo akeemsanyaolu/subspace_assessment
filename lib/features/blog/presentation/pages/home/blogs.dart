@@ -43,7 +43,11 @@ class BlogsPage extends StatelessWidget {
 
   _buildAppbar(BuildContext context) {
     return AppBar(
-      title: const Text('Blogs and Articles'),
+      title: const Text(
+        'Blogs and Articles',
+        style: TextStyle(
+            color: Colors.black, fontSize: 20, fontWeight: FontWeight.w600),
+      ),
       actions: [
         GestureDetector(
           onTap: () => _onShowSavedArticlesViewTapped(context),

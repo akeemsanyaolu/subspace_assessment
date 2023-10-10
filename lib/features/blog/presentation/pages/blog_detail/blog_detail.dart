@@ -93,6 +93,7 @@ class BlogDetailsPage extends HookWidget {
       builder: (context) => FloatingActionButton(
         onPressed: () => _onFloatingActionButtonPressed(context),
         child: const Icon(Icons.favorite, color: Colors.white),
+        backgroundColor: Colors.black,
       ),
     );
   }
