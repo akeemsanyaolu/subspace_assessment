@@ -34,7 +34,7 @@ class BlogsPage extends StatelessWidget {
               onBlogPressed: (blog) => _onBlogPressed(context, blog),
             );
           }),
-          itemCount: 10,
+          itemCount: state.blogs!.length,
         );
       }
       return const SizedBox();
