@@ -1,4 +1,4 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
+//import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
@@ -16,10 +16,10 @@ class RemoteBlogsBloc extends Bloc<RemoteBlogsEvent, RemoteBlogsState> {
   }
 
   void onGetBlogs(GetBlogs event, Emitter<RemoteBlogsState> emit) async {
-    final connectivityResult = await (Connectivity().checkConnectivity());
-    if (connectivityResult == ConnectivityResult.none) {
-      print('Yayyyy');
-    }
+    // final connectivityResult = await (Connectivity().checkConnectivity());
+    // if (connectivityResult == ConnectivityResult.none) {
+    //   print('Yayyyy');
+    // }
     final dataState = await _getBlogsUsecase();
 
     if (dataState is DataSuccess && dataState.data!.isNotEmpty) {
