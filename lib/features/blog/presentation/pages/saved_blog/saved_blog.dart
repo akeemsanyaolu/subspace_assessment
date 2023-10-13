@@ -6,6 +6,7 @@ import 'package:ionicons/ionicons.dart';
 import 'package:subspace/features/blog/domain/entitties/blog.dart';
 import 'package:subspace/features/blog/presentation/bloc/blog/local/local_blog_bloc.dart';
 import 'package:subspace/features/blog/presentation/widgets/blog_tile.dart';
+import 'package:subspace/features/blog/presentation/widgets/saved_blog_tile.dart';
 import 'package:subspace/injection_container.dart';
 
 class SavedBlogs extends HookWidget {
@@ -60,7 +61,7 @@ class SavedBlogs extends HookWidget {
     return ListView.builder(
       itemCount: blogs.length,
       itemBuilder: (context, index) {
-        return BlogWidget(
+        return SavedBlogWidget(
           blog: blogs[index],
           isRemovable: true,
           onRemove: (article) => _onRemoveArticle(context, article),
