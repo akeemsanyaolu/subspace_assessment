@@ -30,7 +30,6 @@ class BlogWidget extends StatelessWidget {
           children: [
             _buildImage(context),
             _buildTitleAndDescription(),
-            //_buildRemovableArea(),
           ],
         ),
       ),
@@ -110,28 +109,9 @@ class BlogWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildRemovableArea() {
-    if (isRemovable!) {
-      return GestureDetector(
-        onTap: _onRemove,
-        child: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8),
-          child: Icon(Icons.remove_circle_outline, color: Colors.red),
-        ),
-      );
-    }
-    return Container();
-  }
-
   void _onTap() {
     if (onBlogPressed != null) {
       onBlogPressed!(blog!);
-    }
-  }
-
-  void _onRemove() {
-    if (onRemove != null) {
-      onRemove!(blog!);
     }
   }
 }
